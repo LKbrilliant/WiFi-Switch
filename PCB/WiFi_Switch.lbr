@@ -265,18 +265,18 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <text x="-0.635" y="1.27" size="1.27" layer="25">&gt;NAME</text>
 <text x="-0.635" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="TRANSISTOR_SOT23-EBC">
-<description>&lt;b&gt;SOT-23 (EBC)&lt;/b&gt;</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.127" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.127" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.127" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.127" layer="51"/>
+<package name="SEMICON-SMD-IPC_SOT23">
+<description>&lt;b&gt;SOT-23&lt;/b&gt;</description>
+<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
+<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
 <rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
 <rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
 <rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
-<smd name="B" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="C" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="E" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
+<smd name="1" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
+<smd name="2" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
+<smd name="3" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
 <text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
 <text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
@@ -478,6 +478,19 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <text x="-3.81" y="1.4986" size="1.778" layer="95">&gt;NAME</text>
 <text x="-3.81" y="-3.302" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="SEMICON-SMD-IPC_NPN">
+<rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="2.54" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="0.508" y2="1.524" width="0.1524" layer="94"/>
+<wire x1="1.778" y1="-1.524" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.778" y2="-1.524" width="0.1524" layer="94"/>
+<wire x1="1.54" y1="-2.0399" x2="0.3081" y2="-1.4239" width="0.1524" layer="94"/>
+<pin name="B" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+<pin name="C" x="2.54" y="5.08" visible="off" length="short" direction="pas" rot="R270"/>
+<pin name="E" x="2.54" y="-5.08" visible="off" length="short" direction="pas" rot="R90"/>
+<text x="-10.16" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="5.08" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
 <symbol name="SUPPLY1_+3V3">
 <wire x1="1.27" y1="-1.905" x2="0" y2="0" width="0.254" layer="94"/>
 <wire x1="0" y1="0" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
@@ -494,24 +507,6 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
 <pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
 <text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
-</symbol>
-<symbol name="TRANSISTOR_NPN">
-<rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="2.54" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="0.508" y2="1.524" width="0.1524" layer="94"/>
-<wire x1="1.778" y1="-1.524" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="1.27" y1="-2.54" x2="1.778" y2="-1.524" width="0.1524" layer="94"/>
-<wire x1="1.54" y1="-2.04" x2="0.308" y2="-1.424" width="0.1524" layer="94"/>
-<wire x1="1.524" y1="-2.413" x2="2.286" y2="-2.413" width="0.254" layer="94"/>
-<wire x1="2.286" y1="-2.413" x2="1.778" y2="-1.778" width="0.254" layer="94"/>
-<wire x1="1.778" y1="-1.778" x2="1.524" y2="-2.286" width="0.254" layer="94"/>
-<wire x1="1.524" y1="-2.286" x2="1.905" y2="-2.286" width="0.254" layer="94"/>
-<wire x1="1.905" y1="-2.286" x2="1.778" y2="-2.032" width="0.254" layer="94"/>
-<pin name="B" x="-2.54" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
-<pin name="C" x="2.54" y="5.08" visible="off" length="short" direction="pas" swaplevel="2" rot="R270"/>
-<pin name="E" x="2.54" y="-5.08" visible="off" length="short" direction="pas" swaplevel="3" rot="R90"/>
-<text x="-10.16" y="7.62" size="1.778" layer="95">&gt;NAME</text>
-<text x="-10.16" y="5.08" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -817,6 +812,24 @@ Source: www.kingbright.com</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="SEMICON-SMD-IPC_NPN-TRANSISTOR_" prefix="Q" uservalue="yes">
+<description>&lt;B&gt;NPN TRANSISTOR&lt;/B&gt;</description>
+<gates>
+<gate name="G$1" symbol="SEMICON-SMD-IPC_NPN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="SOT23" package="SEMICON-SMD-IPC_SOT23">
+<connects>
+<connect gate="G$1" pin="B" pad="1"/>
+<connect gate="G$1" pin="C" pad="3"/>
+<connect gate="G$1" pin="E" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 <deviceset name="SUPPLY1_+3V3" prefix="+3V3">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
@@ -852,221 +865,6 @@ Source: www.kingbright.com</description>
 <device name="">
 <technologies>
 <technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="TRANSISTOR_*-NPN-" prefix="T" uservalue="yes">
-<description>NPN Transistror&lt;p&gt;
-BF959 corrected 2008.03.06&lt;br&gt;</description>
-<gates>
-<gate name="G$1" symbol="TRANSISTOR_NPN" x="0" y="0"/>
-</gates>
-<devices>
-<device name="SOT23-EBC" package="TRANSISTOR_SOT23-EBC">
-<connects>
-<connect gate="G$1" pin="B" pad="B"/>
-<connect gate="G$1" pin="C" pad="C"/>
-<connect gate="G$1" pin="E" pad="E"/>
-</connects>
-<technologies>
-<technology name=""/>
-<technology name="29"/>
-<technology name="2N1613"/>
-<technology name="2N1711"/>
-<technology name="2N1893"/>
-<technology name="2N2102"/>
-<technology name="2N2218"/>
-<technology name="2N2219"/>
-<technology name="2N2219A"/>
-<technology name="2N2222"/>
-<technology name="2N2222A"/>
-<technology name="2N2369"/>
-<technology name="2N2369A"/>
-<technology name="2N2484"/>
-<technology name="2N2896"/>
-<technology name="2N3019"/>
-<technology name="2N3020"/>
-<technology name="2N3439"/>
-<technology name="2N3440"/>
-<technology name="2N3700"/>
-<technology name="2N4124"/>
-<technology name="2N5400"/>
-<technology name="2N5401"/>
-<technology name="2N5550"/>
-<technology name="2N5551"/>
-<technology name="2N6427"/>
-<technology name="2N6517"/>
-<technology name="2N6520"/>
-<technology name="2N930"/>
-<technology name="92"/>
-<technology name="BC107A"/>
-<technology name="BC107B"/>
-<technology name="BC108B"/>
-<technology name="BC108C"/>
-<technology name="BC140-10"/>
-<technology name="BC140-16"/>
-<technology name="BC141-10"/>
-<technology name="BC141-16"/>
-<technology name="BC167"/>
-<technology name="BC168"/>
-<technology name="BC169"/>
-<technology name="BC237"/>
-<technology name="BC238"/>
-<technology name="BC239"/>
-<technology name="BC317"/>
-<technology name="BC318"/>
-<technology name="BC319"/>
-<technology name="BC328"/>
-<technology name="BC337"/>
-<technology name="BC337-16"/>
-<technology name="BC337-25"/>
-<technology name="BC337-40"/>
-<technology name="BC338-16"/>
-<technology name="BC338-25"/>
-<technology name="BC338-40"/>
-<technology name="BC368"/>
-<technology name="BC372"/>
-<technology name="BC373"/>
-<technology name="BC447"/>
-<technology name="BC449"/>
-<technology name="BC449A"/>
-<technology name="BC485"/>
-<technology name="BC487"/>
-<technology name="BC489"/>
-<technology name="BC517"/>
-<technology name="BC546"/>
-<technology name="BC547"/>
-<technology name="BC547A"/>
-<technology name="BC547B"/>
-<technology name="BC548"/>
-<technology name="BC549"/>
-<technology name="BC550"/>
-<technology name="BC618"/>
-<technology name="BC635"/>
-<technology name="BC637"/>
-<technology name="BC639"/>
-<technology name="BC808"/>
-<technology name="BC817"/>
-<technology name="BC817-16"/>
-<technology name="BC817-16LT1"/>
-<technology name="BC817-25"/>
-<technology name="BC817-25LT1"/>
-<technology name="BC817-40"/>
-<technology name="BC817-40LT1"/>
-<technology name="BC818"/>
-<technology name="BC818-16"/>
-<technology name="BC818-25"/>
-<technology name="BC818-40"/>
-<technology name="BC846"/>
-<technology name="BC846A"/>
-<technology name="BC846ALT1"/>
-<technology name="BC846B"/>
-<technology name="BC846BLT1"/>
-<technology name="BC847"/>
-<technology name="BC847A"/>
-<technology name="BC847ALT1"/>
-<technology name="BC847B"/>
-<technology name="BC847BLT1"/>
-<technology name="BC847C"/>
-<technology name="BC847CLT1"/>
-<technology name="BC848"/>
-<technology name="BC848A"/>
-<technology name="BC848ALT1"/>
-<technology name="BC848B"/>
-<technology name="BC848BLT1"/>
-<technology name="BC848C"/>
-<technology name="BC848CLT1"/>
-<technology name="BC849"/>
-<technology name="BC850"/>
-<technology name="BC868"/>
-<technology name="BCF29"/>
-<technology name="BCF30"/>
-<technology name="BCF32"/>
-<technology name="BCF33"/>
-<technology name="BCF81"/>
-<technology name="BCV71"/>
-<technology name="BCV72"/>
-<technology name="BCW31"/>
-<technology name="BCW32"/>
-<technology name="BCW33"/>
-<technology name="BCW60"/>
-<technology name="BCW71"/>
-<technology name="BCW72"/>
-<technology name="BCW81"/>
-<technology name="BCX19"/>
-<technology name="BCX20"/>
-<technology name="BCX54"/>
-<technology name="BCX55"/>
-<technology name="BCX56"/>
-<technology name="BCX70"/>
-<technology name="BCY58-IX"/>
-<technology name="BCY58-VIII"/>
-<technology name="BCY59-VII"/>
-<technology name="BCY59-VIII"/>
-<technology name="BCY59-X"/>
-<technology name="BF199"/>
-<technology name="BF224"/>
-<technology name="BF240"/>
-<technology name="BF374"/>
-<technology name="BF391"/>
-<technology name="BF393"/>
-<technology name="BF420"/>
-<technology name="BF422"/>
-<technology name="BF622"/>
-<technology name="BF820"/>
-<technology name="BF822"/>
-<technology name="BF844"/>
-<technology name="BF959"/>
-<technology name="BFR53"/>
-<technology name="BFR92"/>
-<technology name="BFR92A"/>
-<technology name="BFR93"/>
-<technology name="BFR93A"/>
-<technology name="BFR96"/>
-<technology name="BFS17"/>
-<technology name="BFS19"/>
-<technology name="BFS20"/>
-<technology name="BFT25"/>
-<technology name="BFY50"/>
-<technology name="BSR12"/>
-<technology name="BSR13"/>
-<technology name="BSR14"/>
-<technology name="BSS71"/>
-<technology name="BSS72"/>
-<technology name="BSS73"/>
-<technology name="BSV52LT1"/>
-<technology name="BSX20"/>
-<technology name="BSX45-16"/>
-<technology name="BSX46-10"/>
-<technology name="BSX46-16"/>
-<technology name="MMBT2222ALT1"/>
-<technology name="MMBT2369LT1"/>
-<technology name="MMBT2484LT1"/>
-<technology name="MMBT3904LT1"/>
-<technology name="MMBT4401LT1"/>
-<technology name="MMBT5551LT1"/>
-<technology name="MMBT6429LT1"/>
-<technology name="MMBT6517LT1"/>
-<technology name="MMBT918LT1"/>
-<technology name="MMBTA42LT1"/>
-<technology name="MMBTH10LT1"/>
-<technology name="MMBTH24LT1"/>
-<technology name="MMUN2211LT1"/>
-<technology name="MMUN2212LT1"/>
-<technology name="MMUN2213LT1"/>
-<technology name="MMUN2214LT1"/>
-<technology name="MPHS10"/>
-<technology name="MPS2222A"/>
-<technology name="MPSA06"/>
-<technology name="MPSA13"/>
-<technology name="MPSA14"/>
-<technology name="MPSA18"/>
-<technology name="MPSA28"/>
-<technology name="MPSA42"/>
-<technology name="MPSA44"/>
-<technology name="MPSL51"/>
-<technology name="MPSW42"/>
 </technologies>
 </device>
 </devices>
