@@ -3,4 +3,4 @@ WiFi-Switch is a wall outlet which can be controlled through the home network. I
 This project is based on the ESP8266-01 module. Independent static-ip addresses can be use when deploying several switches adound the house.
 
 PCB Schematics:
-![Schematic](https://raw.githubusercontent.com/LKbrilliant/WiFi-Switch/master/PCB/WiFi_Switch_schematic_v2.1.png)
+![Schematic](https://raw.githubusercontent.com/LKbrilliant/WiFi-Switch/master/PCB/WiFi_Switch_v2.2_Schematic.png)
