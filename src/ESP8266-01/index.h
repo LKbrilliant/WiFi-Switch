@@ -2,43 +2,43 @@ const char MAIN_page[] PROGMEM = R"=====(
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>WiFi Switch</title>
     <style>
-      html { 
-        font-family: Georgia; 
-        display: inline-block; 
-        margin: 0px auto; 
+      html {
+        font-family: Georgia;
+        display: inline-block;
+        margin: 0px auto;
         text-align: center;
       }
-      .button { 
-        border: none; 
+      .button {
+        border: none;
         width: 220px;
-        color: white; 
+        color: white;
         padding: 16px;
-        text-decoration: none; 
-        font-size: 30px; 
-        margin: 2px; 
-        cursor: pointer; 
+        text-decoration: none;
+        font-size: 30px;
+        margin: 2px;
+        cursor: pointer;
         border-radius: 8px;
       }
       .button1 {
         background-color: #37ba3a;
       }
-      .button2{
-        background-color: #e22248; 
+      .button2 {
+        background-color: #e22248;
       }
-      .button1:hover{
+      .button1:hover {
         background-color: #31992f;
       }
-      .button1:active{
+      .button1:active {
         transform: translateY(1px);
         background-color: #31992f;
       }
-      .button2:hover{
+      .button2:hover {
         background-color: #b52441;
       }
-      .button2:active{
+      .button2:active {
         transform: translateY(1px);
         background-color: #b52441;
       }
@@ -52,7 +52,9 @@ const char MAIN_page[] PROGMEM = R"=====(
       }
     </style>
   </head>
-  <link rel="icon" href="data:mage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABLPSURB
+  <link
+    rel="icon"
+    href="data:mage/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAYAAABxLuKEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABLPSURB
                    VHhe7VwJcBzVmf67e3oOXdZlW7YlfEg+AGOzNpFYApgAdkhiwAnEy7nJ7mKTrSUhRQhU4t2wsIStXARCAlS87BZhYwI2CeAAxsCGGONDvrEBHxgfsmWhW9Y5Mz3d+32vZ3SORjPSiHKq8lW9et2
                    vW318/d/vjeSviA8t2o8qnMoif6uVPSbseApzPS1ljmj5GM7TNXsMej+aGW1BTRx0EsY5zWgt2G9Da7VFPxCyzZrAhceaecJoY1SIARFGrVWYEdC7/F4tNManhQosx5OPF5uMsTl44XF4/fG65h
                    Ti9Ew0L5oPrRMkkBkL59Sib0A7jbEG7O9AO2E7epVHszpwUguOtenlNSH0acdoEZPbYOVPM7TIuQG9c5lXC0/Hy+XgUIZ7xohAQv4EYt5GvwPEbFSjaUbaiAEZmWHbcx6+6jxc9jp81XxNc7Jxq
@@ -96,31 +98,63 @@ const char MAIN_page[] PROGMEM = R"=====(
                    J//NwJmGetEchPraS3i+jSDnMKQlpWL/sK1asLIkF75vuSbOl0zN6rN4+AwAl3OsQ3sKH5OTaCljxOa+Y/MUriBfYhrh5brYpYh7Bqwo/5TQAQk+2hjOfbQxnPeHmRs31su/acPOOtNBDMPSyV4
                    jNBOkzIIEzQs7nusMsQ2k9OmfR+0LRENaCPd8Cdv7sX2oIZS3oy5UcOycy98Zkf0bMTG9Aa/FeGcBcqw7PJpV6NEi/PUKF+Kky73T9bKFENZzZSUnx/hvVB5H/wHawXgJ4XCQVmJ6I1w5iT/U4B
                    LZGyBJ/M1zOshhakIjeqAlkr06bJvvFZqN+0BG2v/ZzmgSw9mwDNidQpDDgsE07JdC3GdEHH0stnMgUXnwGOOhen7L8eB8TXx6MGhokRDO45f/BH/L4nQ97Md2TXNOYp8FtIZ2O9DaHskMjjPrW
-                   0FMmis1o0hMf0DN+PuEUqhACULyHBCS6dXDY/DCedj3dtmcddLErwfDps6JFI2FXpLQCjLqkQ3vJymGZpOI0SsC/xWJIPL/L42ICnlN5h8AAAAASUVORK5CYII=">
-  <body>
+                   0FMmis1o0hMf0DN+PuEUqhACULyHBCS6dXDY/DCedj3dtmcddLErwfDps6JFI2FXpLQCjLqkQ3vJymGZpOI0SsC/xWJIPL/L42ICnlN5h8AAAAASUVORK5CYII="
+  />
+  <body onload="initApp()">
     <div class="container">
       <h1>WiFi Switch</h1>
-      <button class="button button1" onclick="sendData(1)">Turn ON</button>
-      <button class="button button2" onclick="sendData(0)">Turn OFF</button>
-      <p>WiFi Switch Status:  <span id="relayState">OFF</span></p>
+      <button class="button button1" id="state_btn" onclick="sendData(1)">Turn ON</button>
+      <p>WiFi Switch Status: <span id="state_text">OFF</span></p>
     </div>
     <script>
-      function sendData(state) {
+      var pin_state = 0;
+
+      function setStateHtml() {
+        if (pin_state == 1) {
+          document.getElementById('state_btn').innerText = 'TURN OFF';
+
+          document.getElementById('state_btn').classList.remove('button1');
+          document.getElementById('state_btn').classList.add('button2');
+        } 
+        else {
+          document.getElementById('state_btn').innerText = 'TURN ON';
+
+          document.getElementById('state_btn').classList.remove('button2');
+          document.getElementById('state_btn').classList.add('button1');
+        }
+
+        document.getElementById('state_text').innerText = pin_state == 1 ? 'ON' : 'OFF';
+      }
+      function sendData() {
+        var new_pin_state = pin_state == 1 ? 0 : 1;
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState  == 4 && this.status  == 200) {
+            console.log('sending state to esp:' + new_pin_state);
+            pin_state = new_pin_state;
+            setStateHtml();
+          }
+        };
+        xhttp.open('GET', 'setRelay?relayState=' + new_pin_state, true);
+        xhttp.send();
+      }
+
+      function initApp() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("relayState").innerHTML = this.responseText;
+            pin_state = +this.responseText; //  + use for type convert to int
+            setStateHtml();
           }
         };
-        xhttp.open("GET", "setRelay?relayState="+state, true);
+        xhttp.open('GET', 'getRelayState', true);
         xhttp.send();
+
+        setStateHtml();
       }
-      
-      setInterval(function() {
-        getData();                          // Call a function repetatively with 2 Second interval
-      }, 2000);                             //2000mSeconds update rate
-    
     </script>
   </body>
 </html>
+
 )=====";
